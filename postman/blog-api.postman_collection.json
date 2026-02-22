@@ -1,0 +1,1339 @@
+{
+  "info": {
+    "_postman_id": "502462bb-dc96-44fe-96fd-424955b7b2aa",
+    "name": "blog-api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47381662",
+    "_collection_link": "https://go.postman.co/collection/47381662-502462bb-dc96-44fe-96fd-424955b7b2aa?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"kamal@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"tenantId\": \"36d3c957-4303-4aa5-a336-336b3b81a211\",\r\n  \"role\": \"ADMIN\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://multi-tenant-blog-api.onrender.com/auth/register",
+          "protocol": "https",
+          "host": [
+            "multi-tenant-blog-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "register",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"kamal@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"tenantId\": \"36d3c957-4303-4aa5-a336-336b3b81a211\",\r\n  \"role\": \"ADMIN\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://multi-tenant-blog-api.onrender.com/auth/register",
+              "protocol": "https",
+              "host": [
+                "multi-tenant-blog-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 22 Feb 2026 19:55:14 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "206"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9d210a30ea59e2c9-DEL"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"f9-mRuMzHJvHfYaAW3Y18b81RRR3xM\""
+            },
+            {
+              "key": "rndr-id",
+              "value": "335eae2c-0d86-4e6d"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"adfbae1b-a671-4dbd-aefc-2585f1d2bc89\",\n    \"email\": \"kamal@gmail.com\",\n    \"password\": \"$2b$10$ylLOSL/olHOLMpVYFtOSNuWymmwVzO3x89zHyKqwsGGxpEZRVDx2a\",\n    \"role\": \"ADMIN\",\n    \"tenantId\": \"36d3c957-4303-4aa5-a336-336b3b81a211\",\n    \"createdAt\": \"2026-02-22T19:55:14.035Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "",
+            "value": "",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"kamal@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"tenantId\": \"36d3c957-4303-4aa5-a336-336b3b81a211\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://multi-tenant-blog-api.onrender.com/auth/login",
+          "protocol": "https",
+          "host": [
+            "multi-tenant-blog-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "login",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "",
+                "value": "",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"kamal@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"tenantId\": \"36d3c957-4303-4aa5-a336-336b3b81a211\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://multi-tenant-blog-api.onrender.com/auth/login",
+              "protocol": "https",
+              "host": [
+                "multi-tenant-blog-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 22 Feb 2026 19:55:52 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "444"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9d210b23e827e2c9-DEL"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"224-ntKLQmadhDbgC+/yRoOKEwzF84I\""
+            },
+            {
+              "key": "rndr-id",
+              "value": "f7e6b2a4-fdea-4ce6"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZGZiYWUxYi1hNjcxLTRkYmQtYWVmYy0yNTg1ZjFkMmJjODkiLCJ0ZW5hbnRJZCI6IjM2ZDNjOTU3LTQzMDMtNGFhNS1hMzM2LTMzNmIzYjgxYTIxMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MTc5MDE1MiwiZXhwIjoxNzcyMzk0OTUyfQ.KtCpMT4FgmNoYDGqvgjQXOlnyNc3S6vadx_mxvcrfHw\",\n    \"user\": {\n        \"id\": \"adfbae1b-a671-4dbd-aefc-2585f1d2bc89\",\n        \"email\": \"kamal@gmail.com\",\n        \"password\": \"$2b$10$ylLOSL/olHOLMpVYFtOSNuWymmwVzO3x89zHyKqwsGGxpEZRVDx2a\",\n        \"role\": \"ADMIN\",\n        \"tenantId\": \"36d3c957-4303-4aa5-a336-336b3b81a211\",\n        \"createdAt\": \"2026-02-22T19:55:14.035Z\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "check-server",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://multi-tenant-blog-api.onrender.com",
+          "protocol": "https",
+          "host": [
+            "multi-tenant-blog-api",
+            "onrender",
+            "com"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "check-server",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://multi-tenant-blog-api.onrender.com",
+              "protocol": "https",
+              "host": [
+                "multi-tenant-blog-api",
+                "onrender",
+                "com"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 22 Feb 2026 19:53:37 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/html; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "37"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9d210725bc878adb-DEL"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"21-Jaywg5H6nz0tvZy8f4ZOPGI4IM4\""
+            },
+            {
+              "key": "rndr-id",
+              "value": "5d8853f0-5eb3-4e5b"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "Multi-Tenant Blog API is running "
+        }
+      ]
+    },
+    {
+      "name": "create-tenants",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"studysens ai\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://multi-tenant-blog-api.onrender.com/tenants",
+          "protocol": "https",
+          "host": [
+            "multi-tenant-blog-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "tenants"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "create-tenants",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"studysens ai\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://multi-tenant-blog-api.onrender.com/tenants",
+              "protocol": "https",
+              "host": [
+                "multi-tenant-blog-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "tenants"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 22 Feb 2026 19:54:35 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "92"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9d2109397b57e2c9-DEL"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"6a-bV+uLwGQJEJQ9O3WlCoD28Zfgr8\""
+            },
+            {
+              "key": "rndr-id",
+              "value": "fb7bdd39-2303-4430"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"36d3c957-4303-4aa5-a336-336b3b81a211\",\n    \"name\": \"studysens ai\",\n    \"createdAt\": \"2026-02-22T19:54:35.034Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "create post",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZGZiYWUxYi1hNjcxLTRkYmQtYWVmYy0yNTg1ZjFkMmJjODkiLCJ0ZW5hbnRJZCI6IjM2ZDNjOTU3LTQzMDMtNGFhNS1hMzM2LTMzNmIzYjgxYTIxMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MTc5MDE1MiwiZXhwIjoxNzcyMzk0OTUyfQ.KtCpMT4FgmNoYDGqvgjQXOlnyNc3S6vadx_mxvcrfHw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "",
+            "value": "",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n  { \"title\": \"Getting Started with grow AI \", \"content\": \"This post explains the basics of grow AI architecture.\" }\r\n  \r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://multi-tenant-blog-api.onrender.com/posts",
+          "protocol": "https",
+          "host": [
+            "multi-tenant-blog-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "posts"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "create post",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "",
+                "value": "",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n  { \"title\": \"Getting Started with grow AI \", \"content\": \"This post explains the basics of grow AI architecture.\" }\r\n  \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://multi-tenant-blog-api.onrender.com/posts",
+              "protocol": "https",
+              "host": [
+                "multi-tenant-blog-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "posts"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 22 Feb 2026 20:00:06 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "236"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9d2111548a4ab7d1-DEL"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"15b-pens98pro9KvbD4PPClaFuPJ4JY\""
+            },
+            {
+              "key": "rndr-id",
+              "value": "cef00732-e5d7-49af"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"0c93caa4-ee6a-4c65-b9c9-c4f5323ef21d\",\n    \"title\": \"Getting Started with grow AI \",\n    \"content\": \"This post explains the basics of grow AI architecture.\",\n    \"authorId\": \"adfbae1b-a671-4dbd-aefc-2585f1d2bc89\",\n    \"tenantId\": \"36d3c957-4303-4aa5-a336-336b3b81a211\",\n    \"createdAt\": \"2026-02-22T20:00:05.999Z\",\n    \"updatedAt\": \"2026-02-22T20:00:05.999Z\",\n    \"deletedAt\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "get post",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZGZiYWUxYi1hNjcxLTRkYmQtYWVmYy0yNTg1ZjFkMmJjODkiLCJ0ZW5hbnRJZCI6IjM2ZDNjOTU3LTQzMDMtNGFhNS1hMzM2LTMzNmIzYjgxYTIxMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MTc5MDE1MiwiZXhwIjoxNzcyMzk0OTUyfQ.KtCpMT4FgmNoYDGqvgjQXOlnyNc3S6vadx_mxvcrfHw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://multi-tenant-blog-api.onrender.com/posts/",
+          "protocol": "https",
+          "host": [
+            "multi-tenant-blog-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "posts",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "get post",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://multi-tenant-blog-api.onrender.com/posts/",
+              "protocol": "https",
+              "host": [
+                "multi-tenant-blog-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "posts",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 22 Feb 2026 20:00:11 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "344"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9d211176bd0eb7d1-DEL"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"2ff-izS5vdlyOkjrSfVou315jQXJflE\""
+            },
+            {
+              "key": "rndr-id",
+              "value": "dd7eba08-9e0a-42c6"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"page\": 1,\n    \"limit\": 10,\n    \"totalPosts\": 2,\n    \"totalPages\": 1,\n    \"posts\": [\n        {\n            \"id\": \"0c93caa4-ee6a-4c65-b9c9-c4f5323ef21d\",\n            \"title\": \"Getting Started with grow AI \",\n            \"content\": \"This post explains the basics of grow AI architecture.\",\n            \"authorId\": \"adfbae1b-a671-4dbd-aefc-2585f1d2bc89\",\n            \"tenantId\": \"36d3c957-4303-4aa5-a336-336b3b81a211\",\n            \"createdAt\": \"2026-02-22T20:00:05.999Z\",\n            \"updatedAt\": \"2026-02-22T20:00:05.999Z\",\n            \"deletedAt\": null\n        },\n        {\n            \"id\": \"0509b2f7-4a19-41f3-8b0e-a0980418b06b\",\n            \"title\": \"Getting Started with studysens AI \",\n            \"content\": \"This post explains the basics of studysens AI architecture.\",\n            \"authorId\": \"adfbae1b-a671-4dbd-aefc-2585f1d2bc89\",\n            \"tenantId\": \"36d3c957-4303-4aa5-a336-336b3b81a211\",\n            \"createdAt\": \"2026-02-22T19:57:49.356Z\",\n            \"updatedAt\": \"2026-02-22T19:59:47.232Z\",\n            \"deletedAt\": null\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "update posts",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZGZiYWUxYi1hNjcxLTRkYmQtYWVmYy0yNTg1ZjFkMmJjODkiLCJ0ZW5hbnRJZCI6IjM2ZDNjOTU3LTQzMDMtNGFhNS1hMzM2LTMzNmIzYjgxYTIxMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MTc5MDE1MiwiZXhwIjoxNzcyMzk0OTUyfQ.KtCpMT4FgmNoYDGqvgjQXOlnyNc3S6vadx_mxvcrfHw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\":\"Getting Started with studysens AI \"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://multi-tenant-blog-api.onrender.com/posts/0509b2f7-4a19-41f3-8b0e-a0980418b06b",
+          "protocol": "https",
+          "host": [
+            "multi-tenant-blog-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "0509b2f7-4a19-41f3-8b0e-a0980418b06b"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "update posts",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\":\"Getting Started with studysens AI \"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://multi-tenant-blog-api.onrender.com/posts/0509b2f7-4a19-41f3-8b0e-a0980418b06b",
+              "protocol": "https",
+              "host": [
+                "multi-tenant-blog-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "0509b2f7-4a19-41f3-8b0e-a0980418b06b"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 22 Feb 2026 19:59:47 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "248"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9d2110d8cfdab7d1-DEL"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"165-YiRjE7HGdJ/XH9JVPPxFk/Mbtos\""
+            },
+            {
+              "key": "rndr-id",
+              "value": "2ba37fad-f5b9-4e63"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"0509b2f7-4a19-41f3-8b0e-a0980418b06b\",\n    \"title\": \"Getting Started with studysens AI \",\n    \"content\": \"This post explains the basics of studysens AI architecture.\",\n    \"authorId\": \"adfbae1b-a671-4dbd-aefc-2585f1d2bc89\",\n    \"tenantId\": \"36d3c957-4303-4aa5-a336-336b3b81a211\",\n    \"createdAt\": \"2026-02-22T19:57:49.356Z\",\n    \"updatedAt\": \"2026-02-22T19:59:47.232Z\",\n    \"deletedAt\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "delete post",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZGZiYWUxYi1hNjcxLTRkYmQtYWVmYy0yNTg1ZjFkMmJjODkiLCJ0ZW5hbnRJZCI6IjM2ZDNjOTU3LTQzMDMtNGFhNS1hMzM2LTMzNmIzYjgxYTIxMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MTc5MDE1MiwiZXhwIjoxNzcyMzk0OTUyfQ.KtCpMT4FgmNoYDGqvgjQXOlnyNc3S6vadx_mxvcrfHw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://multi-tenant-blog-api.onrender.com/posts/0c93caa4-ee6a-4c65-b9c9-c4f5323ef21d",
+          "protocol": "https",
+          "host": [
+            "multi-tenant-blog-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "0c93caa4-ee6a-4c65-b9c9-c4f5323ef21d"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "delete post",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://multi-tenant-blog-api.onrender.com/posts/0c93caa4-ee6a-4c65-b9c9-c4f5323ef21d",
+              "protocol": "https",
+              "host": [
+                "multi-tenant-blog-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "0c93caa4-ee6a-4c65-b9c9-c4f5323ef21d"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 22 Feb 2026 20:00:32 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "282"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9d2111f6ad86b7d1-DEL"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"196-znnpG3Dkc3NIZdSgT2No5xxzcQY\""
+            },
+            {
+              "key": "rndr-id",
+              "value": "c18a034f-e08e-4906"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Post deleted\",\n    \"deleted\": {\n        \"id\": \"0c93caa4-ee6a-4c65-b9c9-c4f5323ef21d\",\n        \"title\": \"Getting Started with grow AI \",\n        \"content\": \"This post explains the basics of grow AI architecture.\",\n        \"authorId\": \"adfbae1b-a671-4dbd-aefc-2585f1d2bc89\",\n        \"tenantId\": \"36d3c957-4303-4aa5-a336-336b3b81a211\",\n        \"createdAt\": \"2026-02-22T20:00:05.999Z\",\n        \"updatedAt\": \"2026-02-22T20:00:32.034Z\",\n        \"deletedAt\": \"2026-02-22T20:00:32.033Z\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "paging",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZGZiYWUxYi1hNjcxLTRkYmQtYWVmYy0yNTg1ZjFkMmJjODkiLCJ0ZW5hbnRJZCI6IjM2ZDNjOTU3LTQzMDMtNGFhNS1hMzM2LTMzNmIzYjgxYTIxMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MTc5MDE1MiwiZXhwIjoxNzcyMzk0OTUyfQ.KtCpMT4FgmNoYDGqvgjQXOlnyNc3S6vadx_mxvcrfHw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://multi-tenant-blog-api.onrender.com/posts?page=1&limit=10",
+          "protocol": "https",
+          "host": [
+            "multi-tenant-blog-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "posts"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "paging",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://multi-tenant-blog-api.onrender.com/posts?page=1&limit=10",
+              "protocol": "https",
+              "host": [
+                "multi-tenant-blog-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "posts"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 22 Feb 2026 20:00:43 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "310"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9d21123d3d10b7d1-DEL"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"1a3-ZqGqzdFK8tMhm3mLV7zb4bPGWTo\""
+            },
+            {
+              "key": "rndr-id",
+              "value": "9720e70e-baf6-424d"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"page\": 1,\n    \"limit\": 10,\n    \"totalPosts\": 1,\n    \"totalPages\": 1,\n    \"posts\": [\n        {\n            \"id\": \"0509b2f7-4a19-41f3-8b0e-a0980418b06b\",\n            \"title\": \"Getting Started with studysens AI \",\n            \"content\": \"This post explains the basics of studysens AI architecture.\",\n            \"authorId\": \"adfbae1b-a671-4dbd-aefc-2585f1d2bc89\",\n            \"tenantId\": \"36d3c957-4303-4aa5-a336-336b3b81a211\",\n            \"createdAt\": \"2026-02-22T19:57:49.356Z\",\n            \"updatedAt\": \"2026-02-22T19:59:47.232Z\",\n            \"deletedAt\": null\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "filtering",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZGZiYWUxYi1hNjcxLTRkYmQtYWVmYy0yNTg1ZjFkMmJjODkiLCJ0ZW5hbnRJZCI6IjM2ZDNjOTU3LTQzMDMtNGFhNS1hMzM2LTMzNmIzYjgxYTIxMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MTc5MDE1MiwiZXhwIjoxNzcyMzk0OTUyfQ.KtCpMT4FgmNoYDGqvgjQXOlnyNc3S6vadx_mxvcrfHw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://multi-tenant-blog-api.onrender.com/posts?page=1&limit=10&title=studysens",
+          "protocol": "https",
+          "host": [
+            "multi-tenant-blog-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "posts"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            },
+            {
+              "key": "title",
+              "value": "studysens"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "filtering",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://multi-tenant-blog-api.onrender.com/posts?page=1&limit=10&title=studysens",
+              "protocol": "https",
+              "host": [
+                "multi-tenant-blog-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "posts"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "title",
+                  "value": "studysens"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sun, 22 Feb 2026 20:01:05 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "310"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9d2112c70b96b7d1-DEL"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"1a3-ZqGqzdFK8tMhm3mLV7zb4bPGWTo\""
+            },
+            {
+              "key": "rndr-id",
+              "value": "34144bfc-df80-458a"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "Render"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"page\": 1,\n    \"limit\": 10,\n    \"totalPosts\": 1,\n    \"totalPages\": 1,\n    \"posts\": [\n        {\n            \"id\": \"0509b2f7-4a19-41f3-8b0e-a0980418b06b\",\n            \"title\": \"Getting Started with studysens AI \",\n            \"content\": \"This post explains the basics of studysens AI architecture.\",\n            \"authorId\": \"adfbae1b-a671-4dbd-aefc-2585f1d2bc89\",\n            \"tenantId\": \"36d3c957-4303-4aa5-a336-336b3b81a211\",\n            \"createdAt\": \"2026-02-22T19:57:49.356Z\",\n            \"updatedAt\": \"2026-02-22T19:59:47.232Z\",\n            \"deletedAt\": null\n        }\n    ]\n}"
+        }
+      ]
+    }
+  ]
+}

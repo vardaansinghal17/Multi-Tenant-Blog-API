@@ -111,7 +111,7 @@ This helps with performance when fetching posts.
 
 **A Postman collection is included in the repo:**
 ```bash
-postman_collection.json
+/postman\blog-api.postman_collection.json
 ```
 
 You can import this into Postman to test all endpoints.
