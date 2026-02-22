@@ -23,8 +23,19 @@ export const createPostHandler = async (req: AuthRequest, res: Response) => {
 };
 
 export const getPostsHandler = async (req: AuthRequest, res: Response) => {
-  const posts = await getPosts(req.user!.tenantId);
-  res.json(posts);
+  const page = parseInt(req.query.page as string) || 1;
+  const limit = parseInt(req.query.limit as string) || 10;
+  const title = req.query.title as string | undefined;
+
+  const { posts, total } = await getPosts(req.user!.tenantId, page, limit, title);
+
+  res.json({
+    page,
+    limit,
+    total,
+    totalPages: Math.ceil(total / limit),
+    posts,
+  });
 };
 
 export const updatePostHandler = async (req: AuthRequest, res: Response) => {

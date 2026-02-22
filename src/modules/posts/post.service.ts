@@ -11,14 +11,37 @@ export const createPost = async (
   });
 };
 
-export const getPosts = async (tenantId: string) => {
-  return prisma.post.findMany({
-    where: {
-      tenantId,
-      deletedAt: null,
-    },
+
+export const getPosts = async (
+  tenantId: string,
+  page: number,
+  limit: number,
+  title?: string
+) => {
+  const skip = (page - 1) * limit;
+
+  const filters: any = {
+    tenantId,
+    deletedAt: null,
+  };
+
+  if (title) {
+    filters.title = {
+      contains: title,
+      mode: "insensitive",
+    };
+  }
+
+  const posts = await prisma.post.findMany({
+    where: filters,
+    skip,
+    take: limit,
     orderBy: { createdAt: "desc" },
   });
+
+  const total = await prisma.post.count({ where: filters });
+
+  return { posts, total };
 };
 
 export const updatePost = async (
