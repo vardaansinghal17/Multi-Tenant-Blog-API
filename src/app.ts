@@ -13,7 +13,7 @@ app.use("/tenants", tenantRoutes);
 app.use("/posts", postRoutes);
 
 app.get("/", (_req, res) => {
-  res.send("Multi-Tenant Blog API is running 🚀");
+  res.send("Multi-Tenant Blog API is running ");
 });
 
 export default app;

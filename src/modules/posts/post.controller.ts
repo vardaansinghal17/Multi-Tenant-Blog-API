@@ -32,7 +32,7 @@ export const getPostsHandler = async (req: AuthRequest, res: Response) => {
   res.json({
     page,
     limit,
-    total,
+    totalPosts:total,
     totalPages: Math.ceil(total / limit),
     posts,
   });

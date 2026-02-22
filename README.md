@@ -1,138 +1,128 @@
-# Multi-Tenant Blogging Platform API
+# 🚀 Multi-Tenant Blogging Platform API
 
-## Project Overview
+## 📖 Project Overview
+This project is a high-performance Backend REST API designed for a multi-tenant blogging ecosystem. It allows multiple organizations (tenants) to coexist on the same infrastructure while ensuring strict **data isolation**. 
 
-This project is a backend REST API for a multi-tenant blogging platform.  
-Multiple organizations (tenants) can use the same application, but each tenant has its own users and posts.  
-Data is strictly isolated between tenants.
-
-Users can register and login under a specific tenant.  
-Role-based access control (RBAC) is implemented with two roles:
-
-- ADMIN  
-- MEMBER  
-
-Both roles can create posts.  
-Members can edit only their own posts.  
-Admins can edit or delete any post within their tenant.
+Key architectural highlights include:
+* **Tenant-Specific Isolation:** Users and posts are logically partitioned; a user in "Tenant A" cannot access data from "Tenant B."
+* **Role-Based Access Control (RBAC):** Granular permissions for `ADMIN` and `MEMBER` roles.
+* **Scalable Architecture:** Built with TypeScript and Prisma for type-safety and easy database management.
 
 ---
 
-## Tech Stack
-
-- Backend: Node.js, Express, TypeScript  
-- Database: PostgreSQL  
-- ORM: Prisma  
-- Authentication: JWT  
-- Password Hashing: bcrypt  
+## 🛠️ Tech Stack
+* **Runtime:** Node.js
+* **Framework:** Express.js
+* **Language:** TypeScript
+* **Database:** PostgreSQL
+* **ORM:** Prisma
+* **Authentication:** JWT (JSON Web Tokens)
+* **Security:** Bcrypt (Password Hashing)
 
 ---
 
-## Setup Instructions
+## ⚙️ Setup Instructions
 
-### 1. Clone the repository
+Follow these steps to get the development environment running locally:
+
+### 1. Clone the Repository
 ```bash
 git clone <your-repo-url>
 cd multi-tenant-blog-api
-2. Install dependencies
+```
+### 2. Install Dependencies
+```bash
 npm install
-3. Create environment file
-
-Create a .env file in the root directory:
-
+```
+### 3. Environment Configuration
+Create a .env file in the root directory and populate it with your credentials:
+```bash 
 PORT=4000
-DATABASE_URL=postgresql://username:password@localhost:5432/multitenant_blog
-JWT_SECRET=your_secret_key
-4. Setup database
-npx prisma migrate dev
+DATABASE_URL="postgresql://username:password@localhost:5432/multitenant_blog"
+JWT_SECRET="your_secret_key_here"
+```
+### 4. Database Setup
+Initialize the database schema using Prisma:
+
+```Bash
+npx prisma migrate dev --name init
 npx prisma generate
-5. Start the server
+```
+### 5. Start the Server
+```Bash
 npm run dev
+```
+The API will be accessible at: 
+**http://localhost:4000**
 
-Server will run at:
-
-http://localhost:4000
-API Endpoints
-Tenant
-
-Create a new tenant:
-
+---
+## 📑 API Endpoints Documentation
+### 🏢 Tenant Management
+```bash
 POST /tenants
-
-Request Body:
-
-{
-  "name": "Acme Corp"
-}
-Authentication
-
-Register a user under a tenant:
-
-POST /auth/register
-
-Request Body:
-
-{
-  "email": "admin@acme.com",
-  "password": "123456",
-  "tenantId": "TENANT_ID",
-  "role": "ADMIN"
-}
-
-Login and get JWT token:
-
-POST /auth/login
-
-Request Body:
-
-{
-  "email": "admin@acme.com",
-  "password": "123456",
-  "tenantId": "TENANT_ID"
-}
-Posts (Protected Routes)
-
-All post routes require JWT token in header:
-
+```
+### 🔐 Authentication
+```bash
+POST /auth/register  
+POST /auth/login  
+```
+### 📝 Posts (Protected)
+**All post routes require JWT token in header:**
+```bash
 Authorization: Bearer <JWT_TOKEN>
+```
+**Post Routes:**
+```bash
+POST   /posts  
+GET    /posts?page=1&limit=10&title=hello  
+PUT    /posts/:id  
+DELETE /posts/:id  
+```
+### 🧠 Roles & Permissions (RBAC)
+**ADMIN:**
+- Can create posts  
+- Can edit any post  
+- Can delete any post  
 
-Create a post:
+**MEMBER:**
+- Can create posts  
+- Can edit only their own posts 
+---
+## Pagination and Filtering
+```bash
+GET /posts?page=1&limit=5
+GET /posts?title=node&page=1&limit=5
+```
+## Database Indexing
 
-POST /posts
+**Indexes are added on:**
 
-Request Body:
+● tenantId
 
-{
-  "title": "My first post",
-  "content": "Hello world"
-}
+● authorId
 
-Get all posts (with pagination & filtering):
+● createdAt
 
-GET /posts?page=1&limit=10&title=hello
+● deletedAt
 
-Update a post:
+This helps with performance when fetching posts.
 
-PUT /posts/:id
+## Testing
 
-Request Body:
+**A Postman collection is included in the repo:**
+```bash
+postman_collection.json
+```
 
-{
-  "title": "Updated title",
-  "content": "Updated content"
-}
+You can import this into Postman to test all endpoints.
 
-Delete a post (Admin only):
+---
+## Notes
 
-DELETE /posts/:id
-Notes
+● .env is not committed to GitHub
 
-Email is unique within a tenant.
+● .env.example is provided
 
-JWT token is required for protected routes.
+● All routes that modify or read posts are protected by JWT
 
-Data is isolated per tenant.
-
-Soft delete is used for posts.
-
-Pagination and filtering are supported on post listing.
+● Tenant ID is always enforced in database queries
