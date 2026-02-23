@@ -120,7 +120,14 @@ This helps with performance when fetching posts.
 /postman/blog-api.postman_collection.json
 ```
 
-You can import this into Postman to test all endpoints.
+You can import this into Postman to test all endpoints. **OR**
+
+
+**Public Postman collection for testing all APIs:**
+
+🔗 https://www.postman.com/vardansinghal3808-296061/workspace/vardan-public-workspace/collection/47381662-502462bb-dc96-44fe-96fd-424955b7b2aa?action=share&creator=47381662
+
+> Fork this collection in Postman to run the requests locally.
 
 ---
 ## 🚀 Caching with Redis (Upstash)
