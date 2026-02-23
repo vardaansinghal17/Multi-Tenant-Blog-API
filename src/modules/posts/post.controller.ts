@@ -7,6 +7,7 @@ import {
   softDeletePost,
 } from "./post.service";
 import prisma from "../../lib/prisma";
+import { redisClient } from "../../lib/redis";
 
 
 export const createPostHandler = async (req: AuthRequest, res: Response) => {
@@ -18,7 +19,10 @@ export const createPostHandler = async (req: AuthRequest, res: Response) => {
     req.user!.userId,
     req.user!.tenantId
   );
-
+const keys = await redisClient.keys(`posts:${req.user!.tenantId}:*`);
+  if (keys.length) {
+    await redisClient.del(keys);
+  }
   res.status(201).json(post);
 };
 
@@ -27,15 +31,26 @@ export const getPostsHandler = async (req: AuthRequest, res: Response) => {
   const limit = parseInt(req.query.limit as string) || 10;
   const title = req.query.title as string | undefined;
 
+  const cacheKey = `posts:${req.user!.tenantId}:p${page}:l${limit}:t${title}`;
+
+  const cached = await redisClient.get(cacheKey);
+  if (cached) {
+    return res.json(JSON.parse(cached));
+  }
+
   const { posts, total } = await getPosts(req.user!.tenantId, page, limit, title);
 
-  res.json({
+  const result = {
     page,
     limit,
-    totalPosts:total,
+    totalPosts: total,
     totalPages: Math.ceil(total / limit),
     posts,
-  });
+  };
+
+  await redisClient.setEx(cacheKey, 120, JSON.stringify(result));
+
+  res.json(result);
 };
 
 export const updatePostHandler = async (req: AuthRequest, res: Response) => {
@@ -59,6 +74,11 @@ export const updatePostHandler = async (req: AuthRequest, res: Response) => {
   }
 
   const updated = await updatePost(postId, { title, content });
+
+  const keys = await redisClient.keys(`posts:${req.user!.tenantId}:*`);
+  if (keys.length) {
+    await redisClient.del(keys);
+  }
   res.json(updated);
 };
 
@@ -78,5 +98,11 @@ export const deletePostHandler = async (req: AuthRequest, res: Response) => {
   }
 
   const deleted = await softDeletePost(postId);
+
+  const keys = await redisClient.keys(`posts:${req.user!.tenantId}:*`);
+  if (keys.length) {
+    await redisClient.del(keys);
+  }
+
   res.json({ message: "Post deleted", deleted });
 };

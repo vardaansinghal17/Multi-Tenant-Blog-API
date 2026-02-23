@@ -111,11 +111,39 @@ This helps with performance when fetching posts.
 
 **A Postman collection is included in the repo:**
 ```bash
-/postman\blog-api.postman_collection.json
+/postman/blog-api.postman_collection.json
 ```
 
 You can import this into Postman to test all endpoints.
 
+---
+## 🚀 Caching with Redis (Upstash)
+
+This project uses **Redis** as a caching layer to improve performance for frequently accessed endpoints such as paginated and filtered post listings.
+
+Redis is hosted on **Upstash (Serverless Redis)** and is integrated with the Node.js backend using the official `redis` client.
+
+###  Why Redis?
+
+-  Faster API responses (serves cached data instead of hitting DB)
+-  Reduced database load
+-  Smart caching for pagination & filtering
+-  Automatic cache invalidation on create/update/delete
+
+
+
+### 🛠 Setup Redis (Upstash)
+
+1. Create a free Redis database on **Upstash**  :
+    **https://upstash.com/**
+
+2. Copy the **Redis TLS URL** (starts with `rediss://`)
+
+3. Add it to your `.env` file:
+
+```env
+REDIS_URL=rediss://default:<PASSWORD>@<YOUR-UPSTASH-ENDPOINT>:6379
+```
 ---
 ## Notes
 
