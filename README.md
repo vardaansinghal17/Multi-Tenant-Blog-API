@@ -14,10 +14,16 @@ Key architectural highlights include:
 * **Runtime:** Node.js
 * **Framework:** Express.js
 * **Language:** TypeScript
-* **Database:** PostgreSQL
+* **Database:** PostgreSQL (Neon – Serverless Postgres)
 * **ORM:** Prisma
 * **Authentication:** JWT (JSON Web Tokens)
 * **Security:** Bcrypt (Password Hashing)
+* **Hosting / Deployment**:
+ Render (Backend API)
+, Neon (PostgreSQL) , Upstash (Redis)
+
+* **Tools**: Postman (API testing)
+, Git & GitHub (version control)
 
 ---
 
